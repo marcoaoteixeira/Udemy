@@ -1,0 +1,1 @@
+# [RabbitMQ in Practice](https://www.udemy.com/course/rabbitmq-in-practice/)
