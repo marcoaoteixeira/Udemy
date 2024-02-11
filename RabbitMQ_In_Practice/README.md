@@ -22,8 +22,31 @@ Go to the **Exec** tab and execute the command:
 
 Or use the interactive console for this.
 
-## Information Resources and Sites
+## Cluster Sample
+
+In the folder "docker", you'll find files that will enable you to build a small cluster with 3 nodes. For this, just execute `run_me.ps1` or use the `docker-compose` command on your terminal.
+
+`docker-compose -p rabbitmq_cluster up -d`
+
+This will create 3 containers and expose its ports:
+
+- `rabbitmq_node_1`
+	- Service: 5672
+	- Management UI: 15672
+
+- `rabbitmq_node_2`
+	- Service: 5673
+	- Management UI: 15673
+
+- `rabbitmq_node_3`
+	- Service: 5674
+	- Management UI: 15674
+
+Nodes `rabbitmq_node_2` and `rabbitmq_node_3` will join `rabbitmq_node_1` and create the cluster.
+
+## Information, Resources and Sites
 
 - [RabbitMQ on GitHub](https://github.com/rabbitmq/rabbitmq-server)
 - [Get Started with RabbitMQ](https://rabbitmq.com/getstarted.html)
 - [Udemy - RabbitMQ in Practice](https://rabbitmq.com/getstarted.html)
+- [Try RabbitMQ](https://tryrabbitmq.com)

@@ -10,7 +10,7 @@ namespace RabbitMQ.In.Practice {
                 .GetRequiredService<IEnumerable<Exercise>>()
                 .OrderBy(exercise => exercise.Code)
                 .ToArray();
-            
+
             while (true) {
                 Console.Clear();
 
@@ -20,7 +20,7 @@ namespace RabbitMQ.In.Practice {
                 var option = GetUserInput();
                 if (option == 999) { break; }
 
-                var exercise = exercises.FirstOrDefault(item => item.Code == option);
+                var exercise = Array.Find(exercises, item => item.Code == option);
 
                 if (exercise is not null) {
                     Console.Clear();

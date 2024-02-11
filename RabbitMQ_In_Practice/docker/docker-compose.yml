@@ -1,0 +1,64 @@
+version: "3.8"
+
+networks:
+  rabbitmq_cluster_network:
+    name: rabbitmq_cluster_network
+    driver: bridge
+
+services:
+  rabbitmq_node_1:
+    image: rabbitmq:3.12.12-management
+    container_name: rabbitmq_node_1
+    hostname: node-1.rabbit
+    labels:
+      NAME: "First node of our RabbitMQ Cluster"
+    environment:
+      RABBITMQ_NODENAME: rabbit
+      RABBITMQ_USE_LONGNAME: true
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ./.erlang.cookie:/var/lib/rabbitmq/.erlang.cookie
+      - ./entrypoint.sh:/usr/local/bin/entrypoint.sh
+    command: bash /usr/local/bin/entrypoint.sh
+      
+  rabbitmq_node_2:
+    image: rabbitmq:3.12.12-management
+    depends_on:
+      - rabbitmq_node_1
+    container_name: rabbitmq_node_2
+    hostname: node-2.rabbit
+    labels:
+      NAME: "Second node of our RabbitMQ Cluster"
+    environment:
+      RABBITMQ_NODENAME: rabbit
+      RABBITMQ_USE_LONGNAME: true
+      RABBITMQ_JOIN_CLUSTER: rabbit@node-1.rabbit
+    ports:
+      - 5673:5672
+      - 15673:15672
+    volumes:
+      - ./.erlang.cookie:/var/lib/rabbitmq/.erlang.cookie
+      - ./entrypoint.sh:/usr/local/bin/entrypoint.sh
+    command: bash /usr/local/bin/entrypoint.sh
+
+  rabbitmq_node_3:
+    image: rabbitmq:3.12.12-management
+    depends_on:
+      - rabbitmq_node_2
+    container_name: rabbitmq_node_3
+    hostname: node-3.rabbit
+    labels:
+      NAME: "Third node of our RabbitMQ Cluster"
+    environment:
+      RABBITMQ_NODENAME: rabbit
+      RABBITMQ_USE_LONGNAME: true
+      RABBITMQ_JOIN_CLUSTER: rabbit@node-1.rabbit
+    ports:
+      - 5674:5672
+      - 15674:15672
+    volumes:
+      - ./.erlang.cookie:/var/lib/rabbitmq/.erlang.cookie
+      - ./entrypoint.sh:/usr/local/bin/entrypoint.sh
+    command: bash /usr/local/bin/entrypoint.sh
