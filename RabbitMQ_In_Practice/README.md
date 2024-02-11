@@ -46,6 +46,7 @@ Nodes `rabbitmq_node_2` and `rabbitmq_node_3` will join `rabbitmq_node_1` and cr
 
 ## Information, Resources and Sites
 
+- Docker Volume location (Windows): \\wsl$\docker-desktop-data\data\docker\volumes
 - [RabbitMQ on GitHub](https://github.com/rabbitmq/rabbitmq-server)
 - [Get Started with RabbitMQ](https://rabbitmq.com/getstarted.html)
 - [Udemy - RabbitMQ in Practice](https://rabbitmq.com/getstarted.html)

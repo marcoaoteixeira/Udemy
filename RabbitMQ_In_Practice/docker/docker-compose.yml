@@ -1,9 +1,5 @@
 version: "3.8"
-
-networks:
-  rabbitmq_cluster_network:
-    name: rabbitmq_cluster_network
-    driver: bridge
+name: rabbitmq_cluster
 
 services:
   rabbitmq_node_1:
@@ -46,7 +42,7 @@ services:
   rabbitmq_node_3:
     image: rabbitmq:3.12.12-management
     depends_on:
-      - rabbitmq_node_2
+      - rabbitmq_node_1
     container_name: rabbitmq_node_3
     hostname: node-3.rabbit
     labels:
