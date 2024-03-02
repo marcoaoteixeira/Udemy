@@ -16,7 +16,6 @@ export default function Player({ name, symbol, isActive, onChangeName }) {
   };
 
   let playerNameElement = <span className="player-name">{playerName}</span>;
-  let editButtonLabel = "Edit";
 
   if (isEditing) {
     playerNameElement = (
@@ -27,7 +26,6 @@ export default function Player({ name, symbol, isActive, onChangeName }) {
         onChange={handlePlayerNameChange}
       />
     );
-    editButtonLabel = "Save";
   }
 
   return (
@@ -36,7 +34,7 @@ export default function Player({ name, symbol, isActive, onChangeName }) {
         {playerNameElement}
         <span className="player-symbol">{symbol}</span>
       </span>
-      <button onClick={handleEditClick}>{editButtonLabel}</button>
+      <button onClick={handleEditClick}>{isEditing ? "Save" : "Edit"}</button>
     </li>
   );
 }
