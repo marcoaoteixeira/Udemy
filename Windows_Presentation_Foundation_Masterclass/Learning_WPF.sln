@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33717.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Learning", "Learning", "{5FB4B951-983C-41F6-9F11-BDEF8E90AA64}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning.Example", "Learning\Learning.Example\Learning.Example.csproj", "{93A229ED-CF12-432C-9A72-D46F3DC5DA10}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Calculator", "Calculator", "{2951F082-F954-4BC8-A832-02A1BFE14CC5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearningWPF.CalculatorApp", "LearningWPF.CalculatorApp\LearningWPF.CalculatorApp.csproj", "{2F7249AF-4E5C-4B2D-B754-48C8D892E503}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contacts", "Contacts", "{0380126D-B0AE-4561-B21E-15A2A99E7A22}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearningWPF.ContactsApp", "LearningWPF.ContactsApp\LearningWPF.ContactsApp.csproj", "{1D25D33A-3F36-4E3E-A61B-6545A523988A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandmarkAI", "Landmark_AI\LandmarkAI\LandmarkAI.csproj", "{7E322658-A401-4497-9BFF-837DCD190BB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVVMWeatherApp", "MVVMWeatherApp", "{595A1050-6A3B-49BD-B375-8A68844E376F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearningWPF.MVVMWeatherApp", "MVVMWeatherApp\LearningWPF.MVVMWeatherApp\LearningWPF.MVVMWeatherApp.csproj", "{7E77F3F7-3515-4B63-8247-459637005A0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningWPF.MVVMWeatherApp.UnitTest", "MVVMWeatherApp\LearningWPF.MVVMWeatherApp.UnitTest\LearningWPF.MVVMWeatherApp.UnitTest.csproj", "{500F09ED-D112-4EE9-BA83-39053121BCCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93A229ED-CF12-432C-9A72-D46F3DC5DA10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93A229ED-CF12-432C-9A72-D46F3DC5DA10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93A229ED-CF12-432C-9A72-D46F3DC5DA10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93A229ED-CF12-432C-9A72-D46F3DC5DA10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F7249AF-4E5C-4B2D-B754-48C8D892E503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F7249AF-4E5C-4B2D-B754-48C8D892E503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F7249AF-4E5C-4B2D-B754-48C8D892E503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F7249AF-4E5C-4B2D-B754-48C8D892E503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D25D33A-3F36-4E3E-A61B-6545A523988A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D25D33A-3F36-4E3E-A61B-6545A523988A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D25D33A-3F36-4E3E-A61B-6545A523988A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D25D33A-3F36-4E3E-A61B-6545A523988A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E322658-A401-4497-9BFF-837DCD190BB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E322658-A401-4497-9BFF-837DCD190BB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E322658-A401-4497-9BFF-837DCD190BB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E322658-A401-4497-9BFF-837DCD190BB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E77F3F7-3515-4B63-8247-459637005A0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E77F3F7-3515-4B63-8247-459637005A0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E77F3F7-3515-4B63-8247-459637005A0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E77F3F7-3515-4B63-8247-459637005A0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{500F09ED-D112-4EE9-BA83-39053121BCCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{500F09ED-D112-4EE9-BA83-39053121BCCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{500F09ED-D112-4EE9-BA83-39053121BCCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{500F09ED-D112-4EE9-BA83-39053121BCCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{93A229ED-CF12-432C-9A72-D46F3DC5DA10} = {5FB4B951-983C-41F6-9F11-BDEF8E90AA64}
+		{2F7249AF-4E5C-4B2D-B754-48C8D892E503} = {2951F082-F954-4BC8-A832-02A1BFE14CC5}
+		{1D25D33A-3F36-4E3E-A61B-6545A523988A} = {0380126D-B0AE-4561-B21E-15A2A99E7A22}
+		{7E77F3F7-3515-4B63-8247-459637005A0D} = {595A1050-6A3B-49BD-B375-8A68844E376F}
+		{500F09ED-D112-4EE9-BA83-39053121BCCC} = {595A1050-6A3B-49BD-B375-8A68844E376F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B294501F-3425-488D-BB3B-C9859AAD3A68}
+	EndGlobalSection
+EndGlobal

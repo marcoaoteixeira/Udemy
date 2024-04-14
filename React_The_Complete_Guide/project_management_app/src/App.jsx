@@ -18,6 +18,15 @@ export default function App() {
     });
   };
 
+  const handleCancelNewProject = () => {
+    setProjectState((prevState) => {
+      return {
+        ...prevState,
+        selectedProjectId: undefined,
+      };
+    });
+  };
+
   const handleAddProject = (projectData) => {
     setProjectState((prevState) => {
       const newProject = {
@@ -38,8 +47,8 @@ export default function App() {
     case null:
       content = (
         <NewProject
-          onStartNewProject={handleStartNewProject}
           onAddProject={handleAddProject}
+          onCancelProject={handleCancelNewProject}
         />
       );
       break;
