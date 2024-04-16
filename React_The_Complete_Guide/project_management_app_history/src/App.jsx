@@ -2,6 +2,7 @@ import { useState } from "react";
 import NewProject from "./components/NewProject";
 import NoProjectSelected from "./components/NoProjectSelected";
 import ProjectSidebar from "./components/ProjectSidebar";
+import noProjectsPng from "./assets/no-projects.png";
 
 export default function App() {
   const [projectState, setProjectState] = useState({
@@ -64,6 +65,7 @@ export default function App() {
         projects={projectState.projects}
       />
       {content}
+      <img src={noProjectsPng} alt="temp" width={100} height={100} />
     </main>
   );
 }
