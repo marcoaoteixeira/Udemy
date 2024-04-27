@@ -1,13 +1,17 @@
-import React, { Fragment, useRef, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import Modal from "./components/Modal";
 import { Dialog } from "./interfaces/Dialog";
 import DeleteConfirmation from "./components/DeleteConfirmation";
 import placePickerLogo from "./assets/logo.png";
 import Places from "./components/Places";
 import { Place } from "./interfaces/Place";
-import { AvailablePlaces } from "./data/PlaceStore.js";
+import PlaceService from "./services/PlaceService.js";
+import LocalizationService from "./services/LocalizationService.js";
 
-const pickedPlacesInitalState: Place[] = [];
+const placeService = new PlaceService();
+const localizationService = new LocalizationService();
+
+const availablePlacesInitalState: Place[] = [];
 const currentPlaceInitialState: Place = {
   id: "",
   title: "",
@@ -25,12 +29,30 @@ export default function App(): React.ReactElement {
     close() {},
   });
   const currentPlace = useRef<Place>(currentPlaceInitialState);
-  const [pickedPlaces, setPickedPlaces] = useState(pickedPlacesInitalState);
+  const [availablePlaces, setAvailablePlaces] = useState(
+    availablePlacesInitalState
+  );
+  const [pickedPlaces, setPickedPlaces] = useState(
+    placeService.getSelectedPlaces()
+  );
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const places = localizationService.sortPlacesByDistance(
+        placeService.getAvailablePaces(),
+        position.coords.latitude,
+        position.coords.longitude
+      );
+      setAvailablePlaces(places);
+    });
+  }, []);
 
   const confirmRemovePlaceHandler = () => {
-    setPickedPlaces((prevState) =>
-      prevState.filter((place) => place.id !== currentPlace.current?.id)
-    );
+    setPickedPlaces((prevState) => {
+      placeService.removeSelectedPlace(currentPlace.current.id);
+
+      return prevState.filter((place) => place.id !== currentPlace.current.id);
+    });
     modal.current.close();
   };
 
@@ -52,10 +74,12 @@ export default function App(): React.ReactElement {
         return prevState;
       }
 
-      const place = AvailablePlaces.find((place) => place.id === id);
+      const place = availablePlaces.find((place) => place.id === id);
       if (place === undefined) {
         return prevState;
       }
+
+      placeService.saveSelectedPlace(place.id);
 
       return [place, ...prevState];
     });
@@ -90,7 +114,8 @@ export default function App(): React.ReactElement {
         />
         <Places
           title="Available Places"
-          places={AvailablePlaces}
+          places={availablePlaces}
+          fallbackText="Sorting places by distance..."
           onSelectPlace={selectPlaceHandler}
         />
       </main>

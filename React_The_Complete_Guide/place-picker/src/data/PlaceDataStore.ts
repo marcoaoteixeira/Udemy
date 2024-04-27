@@ -18,7 +18,7 @@ import machuPicchuImg from "../assets/machu-picchu.jpg";
 import amazonRiverImg from "../assets/amazon-river.jpg";
 import { Place } from "../interfaces/Place";
 
-export const AvailablePlaces: Place[] = [
+const AvailablePlaces: Place[] = [
   {
     id: "p1",
     title: "Forest Waterfall",
@@ -200,3 +200,7 @@ export const AvailablePlaces: Place[] = [
     lon: -58.38,
   },
 ];
+
+export const PlaceDataStore = {
+  AvailablePlaces,
+};
